@@ -1,0 +1,10 @@
+<h2>Your Kitten</h2>
+<div>
+  <div>Name: <%= @kitten.name%></div>
+  <div>Age: <%= @kitten.age%></div>
+  <div>Cuteness: <%= @kitten.cuteness%></div>
+  <div>Softness: <%= @kitten.softness%></div>
+<div>
+<%= link_to 'Update Info', edit_kitten_path(@kitten) %>
+<%= link_to 'Remove Kitten', kitten_path(@kitten), method: 'delete', data: {confirm: 'Remove kitten from list?'}  %><br/>
+<%= link_to 'Back', kittens_path %>
