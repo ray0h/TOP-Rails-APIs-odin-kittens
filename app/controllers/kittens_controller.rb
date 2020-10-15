@@ -11,6 +11,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.new(kitten_params)
     @kitten.save
 
+    flash[:notice] = 'Kitten added to list'
     redirect_to kitten_path(@kitten)
   end
 
@@ -22,6 +23,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.find(params[:id])
     @kitten.update(kitten_params)
 
+    flash[:notice] = 'Kitten info updated'
     redirect_to kitten_path(@kitten)
   end
 
@@ -33,6 +35,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.find(params[:id])
     @kitten.destroy
 
+    flash[:notice] = 'Kitten removed from list'
     redirect_to kittens_path
   end
 
